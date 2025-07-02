@@ -1,0 +1,48 @@
+.df{
+    display: flex;
+}
+.ac{
+    align-items: center;
+}
+.jc{
+    justify-content: center;
+}
+.jc-b{
+    justify-content: space-between;
+}
+.fz-14{
+    font-size: 14px;
+}
+.fz-12{
+    font-size: 12px;
+}
+.page-size{
+    max-width: 1280px;
+    margin: auto;
+}
+.txt-up{
+    text-transform: uppercase;
+}
+.txt-cap{
+    text-transform: capitalize;
+}
+.color-sec{
+    color: $secondary-color;
+}
+.pos-rel{
+    position: relative;
+}
+.mt-20{
+    margin-top: 20px;
+}
+.mt-100{margin-top: 100px;}
+.mlr-10{
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+}
+.mr-5{
+    margin-right: 5px;
+}
+.ml-5{
+    margin-left: 5px;
+}

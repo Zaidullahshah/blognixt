@@ -1,0 +1,30 @@
+<div class="page-size supera-title df ac jc-b mt-20 u888932">
+  <h2><i class="fa fa-list"></i>Product Categories</h2>
+</div>
+<div class="page-size product-categories">
+  <div class="prod-cat load-lazy-not-yet">
+    {% for item in categoriesList %} {%if item.items > 0%}
+    <a
+      class="product-list-cat"
+      href="/products/category/{{item.slug}}"
+      title="click to view {{item.name}}"
+    >
+    
+      <div>
+        <div class="image-zkskkekw">
+          <img
+                data-src="{%if item.image != '' %}/media/{{item.image}}{% else %}{{item.image_link}}{%endif%}"
+                style="height: 20px !important"
+                src="/static/assets/image-loading.png"
+                alt="{{item.title}}"
+          />
+        </div>
+        <div class="huge-wwwei">
+          <span>{{item.name}}</span>
+          <span>{{item.items}}+ items</span>
+        </div>
+      </div>
+    </a>
+    {%endif%} {%endfor%}
+  </div>
+</div>

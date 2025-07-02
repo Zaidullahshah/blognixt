@@ -1,0 +1,151 @@
+body{
+  font-family: $p-fonts;
+  padding: 0;
+  margin: 0;
+  color: $primary-color;
+  background-color: $bg-color;
+}
+* {
+  font-family: inherit;
+  color: inherit;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  outline: none;
+}
+.App {
+    display: grid;
+    grid-template-areas: "header" "middle" "main" "footer";
+    grid-template-rows: auto auto 1fr auto;
+    height: 100vh;
+}
+header {
+  grid-area: header;
+}
+.middle {
+  grid-area: middle;
+}
+footer {
+  grid-area: footer;
+}
+ul{
+  padding: 0;
+  margin: 0;
+}
+li{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+a{
+  text-decoration: none;
+}
+h1,h2,h3,h4,h5{
+  padding: 0;
+  margin: 0;
+}
+.line{
+  width: 80%;
+  height: 1px;
+  background: #f443361c;
+  margin: auto;
+}
+
+.search-loading{
+  width: 100%;
+  height: 47px;
+  position: relative;
+  overflow: hidden;
+  background: #0000000d;
+  border-radius: 35px;
+  margin: 6px 0;
+  &.l20{
+    width: 20% !important;
+  } 
+  &.h20{
+    height: 20px !important;
+  }
+  &.h30{
+    height: 30px !important;
+  }
+  &.h10{
+    height: 10px !important;
+  }
+  &.l40{
+    width: 40% !important;
+  } 
+  &.l60{
+    width: 60% !important;
+  } 
+  &.l80{
+    width: 80% !important;
+  } 
+  &::after{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #00000000, #00000021, #ffffff00);
+    animation: srchLoading 1300ms ease-in-out infinite forwards;
+    @keyframes srchLoading {
+      0%{
+        transform: translateX(-100%);
+      }
+      50%{
+
+      }
+      100%{
+        transform: translateX(150%);
+        
+      }
+    }
+  }
+}
+.new-badge{
+  background: #ff00ad !important;
+  color: white !important;
+  padding: 5px 28px;
+  position: absolute;
+  top: -4px;
+  right: -29px;
+  padding-top: 13px;
+  transform: rotate(45deg);
+  font-size: 12px !important;
+  font-weight: 500;
+  &.side-bar-sec1224{
+    border-radius: 3px;
+    padding: 1px 5px;
+    margin: 0;
+    transform: unset;
+    display: inline !important;
+    margin-left: 10px;
+    position: absolute;
+    bottom: 6px;
+    top: auto;
+    left: -8px;
+    background: #ff00ad !important;
+    width: fit-content;
+    font-size: 10px !important;
+  }
+}
+.views-counter{
+  color: #454545;
+  & i{
+    font-size: 14px;
+  }
+  & span{
+    font-size: 12px;
+  }
+}
+.mashar{
+  margin: 0 5px;
+}
+.urckc{
+  display: flex !important;
+  align-items: center;
+  & span{
+    margin: 0 5px !important;
+  }
+}

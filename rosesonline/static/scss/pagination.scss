@@ -1,0 +1,27 @@
+.pagination{
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    box-shadow: $shadow;
+    border-radius: 35px;
+    & a, & i, & span{
+        width: 28px;
+        margin: 0 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 28px;
+        border-radius: 50%;
+        font-size: 14px;
+        transition: 500ms;
+        cursor: pointer;
+        &:hover, &.active{
+            background: #00000014;
+        }
+    }
+    & i{
+        font-size: 11px;
+    }
+}

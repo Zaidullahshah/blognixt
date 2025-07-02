@@ -1,0 +1,133 @@
+// fade in
+.hide {
+  opacity: 0;
+}
+.fade-in {
+  opacity: 0;
+  animation: fade-in 600ms ease-in forwards 1;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fade-in-obsrvr-init {
+  animation: fade-obsrvr-out 600ms ease forwards 1;
+}
+@keyframes fade-obsrvr-out {
+  0% {
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.fade-in-obsrvr {
+  opacity: 0;
+  animation: fade-in-obsrvr 600ms ease-in forwards 1;
+}
+@keyframes fade-in-obsrvr {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+//slide effect
+.slide-in-obsrvr-init {
+  opacity: 0;
+  animation: slide-in-init 600ms ease-in forwards 1;
+}
+
+@keyframes slide-in-init {
+  0% {
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+}
+.slide-in-obsrvr {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slide-in 600ms ease-in forwards 1;
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.from-right-init {
+  transition: 400ms;
+  opacity: 0;
+}
+.from-right {
+  // filter: blur(8px);
+  opacity: 0;
+  animation: fromRight 1s ease-in-out forwards 1;
+  transform: translateX(200px);
+  &.fr1 {
+    animation-delay: 100ms;
+  }
+  &.fr2 {
+    animation-delay: 200ms;
+  }
+  &.fr3 {
+    animation-delay: 450ms;
+  }
+  &.fr4 {
+    animation-delay: 300ms;
+  }
+}
+@media (max-width: 992px) {
+  .from-right {
+    filter: unset;
+  }
+}
+@keyframes fromRight {
+  0% {
+    transform: translateX(200px);
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+.fade-in-eff {
+  transform: scale(1.5);
+  opacity: 0;
+  animation: fade-in-eff 400ms ease-in-out forwards 1;
+  @keyframes fade-in-eff {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+.fade-out-eff {
+  transform: scale(1);
+  animation: fade-out-eff 300ms ease-in-out forwards 1;
+  @keyframes fade-out-eff {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.5);
+    }
+  }
+}

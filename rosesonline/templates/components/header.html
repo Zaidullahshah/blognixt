@@ -1,0 +1,30 @@
+<header>
+    <nav class='page-size df ac jc-b' id="drop-down-nav">
+      <ul class="fade-in">
+        <li>
+          <a href='/' id="logo">
+            <img src="/media/assets/Blognixt.png" alt="{{ website_name  }}"/>
+          </a>
+        </li>
+      </ul>
+      <section id="hover-to-trigger">
+        <i class="fa fa-bars menu-icon-33wsxxx"></i>
+      <ul class='df ac header-link fade-in' id="drop-down-nav-ul">
+        <li class={% if request.path == '/' or request.path == '' %}'active'{%endif%}>
+          <a href='/'>
+            <i class="fa fa-home"></i>
+          </a>
+        </li>
+        <li class={% if '/products/' in request.path  %}'active'{%endif%}>
+          <a href='/products'>Products</a>
+        </li>
+        <li class={% if '/blogs/' in request.path %}'active'{%endif%}>
+          <a href='/blogs'>Blogs</a>
+        </li>
+        <li class={% if '/about/' in request.path %}'active'{%endif%}> 
+          <a href='/about'>About</a>
+        </li>
+      </ul>
+    </section>
+    </nav>
+  </header>

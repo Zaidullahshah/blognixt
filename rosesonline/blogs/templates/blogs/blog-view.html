@@ -1,0 +1,73 @@
+{% extends 'products/base.html' %} {% block title %}{{blog.title}} | {{website_name}}{%endblock %} {%block content %} {% include 'components/header.html' %}
+{%block head__ %}
+    <meta name="keyword" content="{{blog.tags}}"/>
+    <meta name="description" content="{{blog.sub_text}}"/>
+    <meta property="og:title" content="{{blog.title}}" />
+    <meta property="og:description" content="{{blog.sub_text}}" />
+    <meta property="og:image" content="{%if blog.image != '' %}https://blognixt.com/{{blog.image}}{% else %}{{blog.image_link}}{%endif%}" />
+    <meta property="og:site_name" content="blognixt">
+    <meta property="og:url" content="{{blog.title}}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="blognixt">
+    <meta name="twitter:title" content="{{blog.title}}">
+    <meta name="twitter:description" content="{{blog.sub_text}}">
+    <meta name="twitter:creator" content="@{{blog.author}}">
+    <meta name="twitter:image" content="{%if blog.image != '' %}https://blognixt.com/{{blog.image}}{% else %}{{blog.image_link}}{%endif%}">
+    <meta name="twitter:image:alt" content="{{blog.title}}">
+{%endblock%}
+<div class="page-size colors-bg-rain custom-rain-colors aeiwc">
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+<div class="page-size bread-crumb-aaa">
+  <ul class="df ac">
+    <li>
+      <a href='/'>
+        <i class="fa fa-home"></i>
+      </a>
+    </li>
+    <i class="fa fa-angle-double-right"></i>
+    <li>
+      <a href='/blogs'>
+        blogs
+      </a>
+    </li>
+    <i class="fa fa-angle-double-right"></i>
+    <li>
+      {{blog.title}}
+    </li>
+  </ul>
+  
+</div>
+<div class="page-size blogs-view">
+  <div class="blogs-left">
+      <section class="blog-section">
+        <div class="blog-details">
+          <span class="author">
+            {{blog.author}} - {{blog.createdAt|date:'d / m / Y'}}
+            <div class="views-counter mashar" style="display:inline">
+              <i class="fa fa-eye"></i> 
+              <span>{{blog.views}}</span>
+            </div>
+          </span>
+        </div>
+        <h2 class="title">{{blog.title}}</h2>
+          <img
+          class="blog-view-img"
+          src="{%if blog.image != '' %}/media/{{blog.image}}{% else %}{{blog.image_link}}{%endif%}"
+          alt="{{blog.title}}"
+          />
+        <div class="content">
+            {% autoescape off %}
+              {{blog.body}}
+            {% endautoescape %}
+        </div>
+      </section>
+  </div>
+  
+  {% include 'components/side-bar.html' %}
+</div>
+
+{% endblock %}
