@@ -3,23 +3,33 @@ from blogs.models import Blogs
 from django.shortcuts import render
 from products.models import Products,productCategory
 from django.forms.models import model_to_dict
+
+
 def getTagsData(request, tags, cur_id):
     tags_data = []
+
     for tag in tags.split(','):
         item = Products.objects.filter(tags__contains=tag).values('id', 'title', 'image','image_link', 'category', 'price', 'slug', 'stars').order_by('-id')[:10]
+
         for i in item[::-1]:
             iid = i['id']
+
             if iid == cur_id:
                 continue
             isExist = 0
+
             for tg in tags_data:
+
                 if tg['id'] == iid:
                     isExist = 1
                 else:
                     continue
+
             if isExist == 0:
                 tags_data.append(i)
+
     return JsonResponse({'tags_data': tags_data})
+
 
 def getSideItems(request):
     recentBlogs = Blogs.objects.values('title', 'createdAt', 'image','image_link', 'slug', 'author', 'isNew', 'views')[:10]
@@ -60,3 +70,15 @@ def Home(request):
 
 def About(request):
     return render(request, 'products/about.html', context={})
+
+
+def Contact(request):
+    return render(request, 'products/contact.html', context={})
+
+
+def Disclaimer(request):
+    return render(request, 'products/disclaimer.html', context={})
+
+
+def Privacy(request):
+    return render(request, 'products/privacy.html', context={})
