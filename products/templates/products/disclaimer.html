@@ -1,0 +1,63 @@
+{% extends 'products/base.html' %}
+
+{% block title %}Disclaimer | {{website_name}}{% endblock %}
+
+{% block content %}
+  {% include 'components/header.html' %}
+  <div class="page-size disclaimer">
+    <div class="page-size in-disclaimer">
+      <h2>Disclaimer</h2>
+      <p>Please read the following disclaimer carefully before using this website.</p>
+      
+      <div class="disclaimer-content">
+        <h3>General Information</h3>
+        <p>The information contained on this website is for general information purposes only. The information is provided by [Your Company Name], and while we endeavor to keep the information up to date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose.</p>
+        
+        <h3>External Links</h3>
+        <p>Through this website, you may be able to link to other websites that are not under the control of [Your Company Name]. We have no control over the nature, content, and availability of those sites. The inclusion of any links does not necessarily imply a recommendation or endorse the views expressed within them.</p>
+
+        <h3>Liability</h3>
+        <p>In no event will [Your Company Name] be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website.</p>
+
+        <h3>Changes to Disclaimer</h3>
+        <p>[Your Company Name] reserves the right to make changes to the website and its content at any time, and these changes may include the disclaimer. It is recommended to check this page regularly for updates.</p>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .disclaimer {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .in-disclaimer {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .in-disclaimer h2 {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .disclaimer-content h3 {
+      font-size: 22px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .disclaimer-content p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+  </style>
+{% endblock %}

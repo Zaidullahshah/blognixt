@@ -1,0 +1,114 @@
+{% extends 'products/base.html' %}
+
+{% block title %}Contact Us | {{website_name}}{% endblock %}
+
+{% block content %}
+  {% include 'components/header.html' %}
+  <div class="page-size contact-us">
+    <div class="page-size in-contact">
+      <h2>Contact Us</h2>
+      <p>We'd love to hear from you! Please fill out the form below to get in touch.</p>
+
+      <div class="contact-form">
+        <form method="POST" action="{% url 'contact' %}">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="Your Full Name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="Your Email Address" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Send Message</button>
+        </form>
+      </div>
+      
+      <div class="contact-details">
+        <h3>Our Address</h3>
+        <p>📍 1234 Maple Street, San Francisco, CA 94102, USA</p>
+
+        <h3>Phone</h3>
+        <p>+1 (415) 555-0298</p>
+
+        <h3>Email</h3>
+        <p>zaidcomando705@gmail.com</p>
+      </div>
+    </div>
+  </div>
+  <style>
+    .contact-us {
+     background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .in-contact {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .in-contact h2 {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .contact-form .form-group {
+      margin-bottom: 20px;
+    }
+
+    .contact-form label {
+      font-size: 16px;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .contact-form .form-control {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .contact-form .btn-submit {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .contact-form .btn-submit:hover {
+      background-color: #45a049;
+    }
+
+    .contact-details {
+      margin-top: 40px;
+    }
+
+    .contact-details h3 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .contact-details p {
+      font-size: 16px;
+    }
+  </style>
+{% endblock %}

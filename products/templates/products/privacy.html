@@ -1,0 +1,88 @@
+{% extends 'products/base.html' %}
+
+{% block title %}Privacy Policy | {{website_name}}{% endblock %}
+
+{% block content %}
+  {% include 'components/header.html' %}
+  <div class="page-size privacy-policy">
+    <div class="page-size in-privacy-policy">
+      <h2>Privacy Policy</h2>
+      <p>Your privacy is important to us. Please read the following policy carefully to understand how we handle your personal information.</p>
+      
+      <div class="privacy-policy-content">
+        <h3>Information We Collect</h3>
+        <p>We collect information from you when you visit our site, register an account, place an order, or engage in other activities on the website. This may include personal details such as your name, email address, mailing address, and payment information. We may also collect data automatically through cookies and other tracking technologies.</p>
+
+        <h3>How We Use Your Information</h3>
+        <p>The information we collect may be used for the following purposes:
+        <ul>
+          <li>To improve our website and provide a better user experience.</li>
+          <li>To process transactions and fulfill your orders.</li>
+          <li>To send periodic emails, if you've opted-in to receive them.</li>
+          <li>To respond to your customer service requests.</li>
+        </ul>
+        </p>
+
+        <h3>How We Protect Your Information</h3>
+        <p>We implement a variety of security measures to maintain the safety of your personal information when you place an order or enter, submit, or access your personal information. These security measures include password protection, encryption, and secure servers.</p>
+
+        <h3>Sharing Your Information</h3>
+        <p>We do not sell, trade, or otherwise transfer your personally identifiable information to third parties unless we provide users with advance notice. This does not include website hosting partners and other parties who assist us in operating our website, conducting our business, or servicing you. These parties agree to keep this information confidential.</p>
+
+        <h3>Your Rights</h3>
+        <p>You have the right to access, update, or delete your personal data. If you wish to do so, please contact us at [Your Contact Email]. You also have the right to opt-out of receiving marketing communications from us at any time.</p>
+
+        <h3>Cookies</h3>
+        <p>We use cookies to enhance your browsing experience. Cookies are small files stored on your device that help us analyze web traffic and customize the website's content. You may choose to disable cookies through your browser settings, though this may limit certain features of the website.</p>
+
+        <h3>Changes to the Privacy Policy</h3>
+        <p>[Your Company Name] reserves the right to update or modify this Privacy Policy at any time. We encourage you to review this page periodically for any changes. The updated date will be listed at the bottom of this page.</p>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .privacy-policy {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .in-privacy-policy {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .in-privacy-policy h2 {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .privacy-policy-content h3 {
+      font-size: 22px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .privacy-policy-content p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .privacy-policy-content ul {
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    .privacy-policy-content ul li {
+      margin-bottom: 10px;
+    }
+  </style>
+{% endblock %}

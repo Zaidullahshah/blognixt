@@ -1,0 +1,52 @@
+{% extends 'products/base.html' %} {% block title %}HOME | {{website_name}}{%endblock %} {%block content %} {% include 'components/header.html' %}
+<div class="page-size colors-bg-rain custom-rain-colors aeiwc">
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+<div class="page-size colors-bg-rain custom-rain-colors" style="    margin-top: 2534px;
+transform: rotate(96deg);
+left: 638px;">
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+<div class="page-size blogs-view">
+  <div class="blogs-left load-lazy-not-yet">
+    {% for blog in page_obj %}
+      <section class="blog-section slide-in-obsrvr-init">
+        <div class="blog-details">
+          <span class="author">
+            {{blog.author}} - {{blog.createdAt|date:'d / m / Y'}}
+            <div class="views-counter mashar" style="display:inline">
+              <i class="fa fa-eye"></i> 
+              <span>{{blog.views}}</span>
+            </div>
+          </span>
+        </div>
+        <h2 class="title">{{blog.title}}</h2>
+        <div>
+          <img
+            data-src="{%if blog.image != '' %}/media/{{blog.image}}{% else %}{{blog.image_link}}{%endif%}"
+            class="blog-view-img big-img"
+            style="height: 20px !important"
+            src="/static/assets/image-loading.png"
+            alt="{{blog.title}}"
+          />
+        </div>
+        <div class="content">
+            {{blog.sub_text |safe}}
+      </div>
+        <div class="df ac jc">
+          <a href="{{blog.slug}}" class="blog-btns">Read This Article</a>
+        </div>
+      </section>
+    {%endfor%}
+    {% include 'components/paginations.html' %}
+  </div>
+  {% include 'components/side-bar.html' %}
+  
+</div>
+{% endblock %}

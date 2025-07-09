@@ -1,0 +1,121 @@
+{% extends 'products/base.html' %}
+
+{% block title %}
+  {{ product.title|capfirst }} | {{ website_name }}
+{% endblock %}
+
+{% block content %}
+  {% include 'components/header.html' %}
+
+  {% block head__ %}
+    <meta name="keywords" content="{{ product.keywords }}" />
+    <meta name="description" content="{{ product.short_desc }}" />
+    <meta property="og:title" content="{{ product.title }}" />
+    <meta property="og:description" content="{{ product.sub_text }}" />
+    <meta property="og:image" content="{% if product.image and product.image.url %}https://blognixt.com/media/{{ product.image }}{% else %}{{ product.image_link }}{% endif %}" />
+    <meta property="og:site_name" content="Blognixt" />
+    <meta property="og:url" content="{{ product.title }}" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="Blognixt" />
+    <meta name="twitter:title" content="{{ product.title }}" />
+    <meta name="twitter:description" content="{{ product.sub_text }}" />
+    <meta name="twitter:image" content="{% if product.image and product.image.url %}https://blognixt.com/media/{{ product.image }}{% else %}{{ product.image_link }}{% endif %}" />
+    <meta name="twitter:image:alt" content="{{ product.title }}" />
+  {% endblock %}
+
+  <div class="page-size colors-bg-rain custom-rain-colors aeiwc">
+    <div></div><div></div><div></div><div></div>
+  </div>
+
+  <div class="page-size bread-crumb-aaa">
+    <ul class="df ac">
+      <li><a href="/"><i class="fa fa-home"></i></a></li>
+      <i class="fa fa-angle-double-right"></i>
+      <li><a href="/products"> product </a></li>
+      <li><a href="/products/category/{{ product.category.slug }}">{{ product.category.name }}</a></li>
+      <i class="fa fa-angle-double-right"></i>
+      <li>{{ product.title }}</li>
+    </ul>
+  </div>
+
+  <div class="page-size blogs-view">
+    <div class="blogs-left">
+      <section class="df product-view-section-3">
+        <div class="hi392">
+          <img
+            class="big-img"
+            src="{% if product.image and product.image.url %}/media/{{ product.image }}{% else %}{{ product.image_link }}{% endif %}"
+            alt="{{ product.title }}"
+          />
+        </div>
+        <div class="hi392 yellow-tea">
+          <h2>{{ product.title }}</h2>
+          <p class="cat-2333884 ue382k df">
+            Price <i class="fa fa-usd"></i><span>{{ product.price }}</span>
+          </p>
+          <p class="cat-2333884">{{ product.category.name }} Product</p>
+          <div>
+            <div class="stars-cont">
+              {% for i in "12345" %}
+                {% with forloop.counter0 as n %}
+                  <i class="{% if product.stars >= n+1 %}fa-solid fa-star{% elif product.stars >= n+0.5 %}fa-solid fa-star-half-stroke{% else %}fa fa-star-o{% endif %}" aria-hidden="true"></i>
+                {% endwith %}
+              {% endfor %}
+              <span class="ytll"> stars {{ product.stars }} out of 5 </span>
+            </div>
+            <div class="views-counter">
+              <i class="fa fa-eye"></i> 
+              <span>{{ product.views }}</span>
+            </div>
+            <span class="ytll">
+              <i class="fa fa-globe"></i> Global Rating {{ product.ratings }}
+            </span>
+          </div>
+          <div class="desc-38233323">
+            <h3>Description</h3>
+            <p>{{ product.short_desc|safe }}</p>
+          </div>
+          <div class="btn121111">
+            <a href="{{ product.link }}" title="" class="df jc">
+              <span>Check on Amazon</span>
+              <i class="fab fa-amazon" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="content">
+          <h2>Product Description</h2>
+          <p>{% autoescape off %}{{ product.description }}{% endautoescape %}</p>
+        </div>
+      </section>
+
+      <div class="page-size supera-title df ac jc-b mt-20">
+        <h2>Related Products</h2>
+      </div>
+
+      <div id="load-tags-data" class="page-size product-categories product-view">
+        <input type="hidden" style="display:none;" value="{{ product.tags }}" id="tags-list" />
+        <input type="hidden" style="display:none;" value="{{ product.id }}" id="cur_id" />
+        <section style="width: 40%; align-items:start">
+          <div class="search-loading l80 h20"></div>
+          <div class="search-loading l30 h30"></div>
+          <div class="search-loading l60 h20"></div>
+          <div class="search-loading l80 h20"></div>
+        </section>
+        <section style="width: 40%; align-items:start; margin-left:15px;">
+          <div class="search-loading l80 h20"></div>
+          <div class="search-loading l30 h30"></div>
+          <div class="search-loading l60 h20"></div>
+          <div class="search-loading l80 h20"></div>
+        </section>
+      </div>
+
+      {% include 'components/categories-list.html' %}
+    </div>
+
+    {% include 'components/side-bar.html' %}
+  </div>
+
+{% endblock %}
