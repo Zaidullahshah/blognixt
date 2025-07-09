@@ -1,0 +1,15 @@
+.custom-rain-colors{
+    margin-top: 1006px;
+    transform: rotate(12deg);
+    z-index: -1;
+    &.aeiwc{
+        margin-top: 235px;
+    }
+}
+.blogs-home-bottom{
+    & section {
+       & img{
+        width: auto !important;
+    }
+    }
+}

@@ -1,0 +1,48 @@
+
+@font-face { 
+    font-family: manrope; 
+    src: url("/static/fonts/Manrope/Manrope-SemiBold.ttf");
+    font-weight: 600;
+  } 
+@font-face { 
+    font-family: manrope; 
+    src: url("/static/fonts/Manrope/Manrope-Medium.ttf");
+    font-weight: 400;
+  } 
+@font-face { 
+    font-family: manrope; 
+    src: url("/static/fonts/Manrope/Manrope-Light.ttf");
+    font-weight: 200;
+  } 
+@font-face { 
+    font-family: manrope; 
+    src: url("/static/fonts/Manrope/Manrope-ExtraLight.ttf");
+    font-weight: 100;
+  } 
+@font-face { 
+    font-family: manrope; 
+    src: url("/static/fonts/Manrope/Manrope-ExtraBold.ttf");
+    font-weight: bolder;
+  } 
+@font-face { 
+    font-family: manrope; 
+    src: url("/static/fonts/Manrope/Manrope-bold.ttf");
+    font-weight: bold;
+  } 
+@font-face { 
+    font-family: manrope; 
+    src: url("/static/fonts/Manrope/manrop.ttf");
+    font-weight: 300;
+  } 
+// colors setup
+$error-color: #ff3c3c;
+$success-color: #00ff40;
+$badge-background: #ffde3b;
+$active-color: #202b83;
+$primary-color: rgb(15, 12, 27);
+$secondary-color: #ff00ad;
+$secondary-color-ref: #ffffff;
+$bg-color: white;
+$p-fonts: 'manrope', 'system-ui';
+$shadow:  0 0 14px #00000014;
+

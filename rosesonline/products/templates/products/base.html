@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    {% if request.path == '/' %}
+        <meta
+        name="description"
+        content="we providing best products details, information, best pricing and using experience. buy things fairly. read blogs about world of internet. here people can get better experience and information so stay with us and support us so we can improve our services."
+      />
+      <meta
+        name="keywords"
+        content="Online shopping,E-commerce,Online store,Shopping cart,Product catalog,Customer checkout,Secure payment,Delivery tracking,Mobile shopping,
+                Customer reviewsUser-friendly interface,Easy returns,Personalized recommendations,Product comparison,Gift cards,Affiliate program,Marketing automation,Customer support,Fast shipping,Product search,
+                Wishlist,Multi-device compatibility,Social media integration,User account management,
+                Order history tracking"
+      />
+    {% endif %}
+    <meta name="author" content="LittleZabi and blueterminal lab." />
+    <meta name="generator" content="" />
+    <title>{% block title %}{% endblock %}</title>
+    <script src="{% static 'js/blueRex.js' %}"></script>
+    <link
+      href="{% static 'style/main.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    {% block head__ %}{% endblock %}
+  </head>
+  <body>
+    {% block content %}{% endblock %} {% include 'components/footer.html' %}
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>

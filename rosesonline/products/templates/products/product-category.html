@@ -1,0 +1,48 @@
+{% extends 'products/base.html' %} {% block title %}{{category_name}} | {{website_name}}{%endblock %} {%block content %} {% include 'components/header.html' %}
+<div class="page-size colors-bg-rain custom-rain-colors aeiwc">
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+<div class="page-size blogs-view product-view">
+  <div class="blogs-left">
+    <div class="page-size supera-title df ac jc-b mt-20">
+      <h2>Product Items </h2>
+    </div>
+    <div class="page-size product-categories">
+      {% if page_obj.paginator.count == 0 %}
+      <h2 style="font-weight: 300;text-transform: uppercase;color: #949494;">Category Items not found!</h2>
+      {% endif %}
+      {% for item in page_obj %}
+      <section class="slide-in-obsrvr-init product-view-sec">
+        <span class="title">{{item.title}}</span>
+        <span class="title">{{item.description}}</span>
+        <span class="title">{{item.short_desc}}</span>
+        <div class="load-lazy-not-yet">
+        <img data-src="{%if item.image != '' %}/media/{{item.image}}{% else %}{{item.image_link}}{%endif%}"
+          id="product-list-view"
+          style="height: 20px !important"
+          src="/static/assets/image-loading.png"
+          alt="{{blog.title}}" /></div>
+        <div class="ac93jk29">
+          <span>Category {{item.category}}</span>
+          <span>Price <i class="fa fa-usd"></i>{{item.price}}</span>
+        </div>
+        <div class="df ac jc yellow-c">
+          <a href="/products/{{item.slug}}" class="side-bar-link" title="Buy ({{item.title}}) Product">View Details</a>
+          <a href="{{item.link}}" class="side-bar-link" title="Buy ({{item.title}}) Product">Buy Now <i class="fab fa-amazon"></i></a>
+        </div>
+      </section>
+      {% endfor %}
+    </div>
+   
+    {% include 'components/categories-list.html' %}
+    {% include 'components/paginations.html' %}
+  </div>
+  {% include 'components/side-bar.html' %}
+  
+</div>
+
+{% endblock %}

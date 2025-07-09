@@ -1,0 +1,77 @@
+{% extends 'products/base.html' %} {% block title %}PRODUCTS | {{website_name}}{%endblock %} {%block content %} {% include 'components/header.html' %}
+<div class="page-size colors-bg-rain custom-rain-colors aeiwc">
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+{% comment %} <div class="page-size colors-bg-rain custom-rain-colors" style="    margin-top: 2534px;
+transform: rotate(96deg);
+left: 638px;">
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div> {% endcomment %}
+
+<div class="page-size blogs-view product-view">
+  <div class="blogs-left">
+    {% include 'components/categories-list.html' %}
+    <div class="page-size supera-title df ac jc-b mt-20">
+      <h2><i class="fa fa-feather"></i> New Arrivals</h2>
+    </div>
+    <div class="page-size product-categories">
+      {% for item in page_obj %}
+      <section class="slide-in-obsrvr-init product-view-sec">
+        {%if item.isNew%}
+          <span class="new-badge">New</span>
+        {%endif%}
+        <span class="title">{{item.title | capfirst}}</span>
+        <div class="stars-cont product-list-view">
+          <i
+            class="{%if item.stars >= 1 %}fa-solid fa-star {%elif item.stars >= 0.5 %}fa-solid fa-star-half-stroke {%else%}fa fa-star-o {%endif%}"
+            aria-hidden="true"
+          ></i>
+          <i
+            class="{%if item.stars >= 2 %}fa-solid fa-star {%elif item.stars >= 1.5 %}fa-solid fa-star-half-stroke {%else%}fa-solid fa-star-o {%endif%}"
+            aria-hidden="true"
+          ></i>
+          <i
+            class="{%if item.stars >= 3 %}fa-solid fa-star {%elif item.stars >= 2.5 %}fa-solid fa-star-half-stroke {%else%}fa-solid fa-star-o {%endif%}"
+            aria-hidden="true"
+          ></i>
+          <i
+            class="{%if item.stars >= 4 %}fa-solid fa-star {%elif item.stars >= 3.5 %}fa-solid fa-star-half-stroke {%else%}fa-solid fa-star-o {%endif%}"
+            aria-hidden="true"
+          ></i>
+          <i
+            class="{%if item.stars >= 5 %}fa-solid fa-star {%elif item.stars >= 4.5 %}fa-solid fa-star-half-stroke {%else%}fa-solid fa-star-o {%endif%}"
+            aria-hidden="true"
+          ></i>
+          <span class="ytll"> {{item.stars}} </span>
+        </div>
+
+        <div class="load-lazy-not-yet">
+        <img data-src="{%if item.image != '' %}/media/{{item.image}}{% else %}{{item.image_link}}{%endif%}"
+          id="product-list-view"
+          style="height: 20px !important"
+          src="/static/assets/image-loading.png"
+          alt="{{blog.title}}" /></div>
+        <div class="ac93jk29">
+          <span>Category {{item.category}}</span>
+          <span>Price <i class="fa fa-usd"></i>{{item.price}}</span>
+        </div>
+        <div class="df ac jc yellow-c">
+          <a href="/products/{{item.slug}}" class="side-bar-link" title="Buy ({{item.title}}) Product">View Details</a>
+          <a href="{{item.link}}" class="side-bar-link" title="Buy ({{item.title}}) Product">Buy Now <i class="fab fa-amazon"></i></a>
+        </div>
+      </section>
+      {% endfor %}
+    </div>
+    {% include 'components/paginations.html' %}
+  </div>
+  {% include 'components/side-bar.html' %}
+  
+</div>
+
+{% endblock %}
